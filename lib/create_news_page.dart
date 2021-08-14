@@ -14,6 +14,24 @@ class _CreateNewsPageState extends State<CreateNewsPage> {
       appBar: AppBar(
         title: Text('Create News'),
       ),
+      body: Padding(
+        padding: EdgeInsets.all(10),
+        child: Form(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text('เนื้อหาใหม่'),
+              TextFormField(),
+              ElevatedButton(
+                onPressed: () {
+                  print('do something');
+                },
+                child: Text('เพิ่ม'),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
