@@ -22,11 +22,17 @@ class _CreateNewsPageState extends State<CreateNewsPage> {
             children: <Widget>[
               Text('เนื้อหาใหม่'),
               TextFormField(),
-              ElevatedButton(
-                onPressed: () {
-                  print('do something');
-                },
-                child: Text('เพิ่ม'),
+              SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    print('do something');
+                  },
+                  child: Text('เพิ่ม'),
+                ),
               ),
             ],
           ),
