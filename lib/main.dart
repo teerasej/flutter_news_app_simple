@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  print('hello');
+  runApp(
+    MaterialApp(
+      title: 'Flutter Demo',
+      home: Text('oh, hello'),
+    ),
+  );
 }
