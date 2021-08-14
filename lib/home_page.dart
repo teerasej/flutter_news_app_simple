@@ -18,6 +18,10 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.add),
         onPressed: () {
           print('click');
+
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return Text('Create News');
+          }));
         },
       ),
     );
