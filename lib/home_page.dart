@@ -9,6 +9,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<String> newsItems = ['abc', 'def', 'ghi'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,10 +28,10 @@ class _HomePageState extends State<HomePage> {
           },
         ),
         body: ListView.separated(
-          itemCount: 10,
+          itemCount: newsItems.length,
           itemBuilder: (BuildContext context, int index) {
             return ListTile(
-              title: Text(index.toString()),
+              title: Text(newsItems[index]),
             );
           },
           separatorBuilder: (context, index) {
