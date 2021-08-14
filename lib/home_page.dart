@@ -25,12 +25,15 @@ class _HomePageState extends State<HomePage> {
             }));
           },
         ),
-        body: ListView.builder(
+        body: ListView.separated(
           itemCount: 10,
           itemBuilder: (BuildContext context, int index) {
             return ListTile(
               title: Text(index.toString()),
             );
+          },
+          separatorBuilder: (context, index) {
+            return Divider();
           },
         ));
   }
