@@ -13,9 +13,9 @@ class _HomePageState extends State<HomePage> {
   //List<String> newsItems = ['abc', 'def', 'ghi'];
 
   List<NewsData> newsItems = [
-    NewsData('abc'),
-    NewsData('def'),
-    NewsData('ghi')
+    NewsData(id: '1', content: 'abc'),
+    NewsData(id: '2', content: 'def'),
+    NewsData(id: '3', content: 'ghi')
   ];
 
   @override
