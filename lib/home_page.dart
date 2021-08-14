@@ -12,19 +12,24 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('News'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          print('click');
+        appBar: AppBar(
+          title: Text('News'),
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            print('click');
 
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return CreateNewsPage();
-          }));
-        },
-      ),
-    );
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return CreateNewsPage();
+            }));
+          },
+        ),
+        body: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (BuildContext context, int index) {
+            return Text(index.toString());
+          },
+        ));
   }
 }
