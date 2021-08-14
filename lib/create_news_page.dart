@@ -30,6 +30,7 @@ class _CreateNewsPageState extends State<CreateNewsPage> {
                 child: ElevatedButton(
                   onPressed: () {
                     print('do something');
+                    Navigator.pop(context);
                   },
                   child: Text('เพิ่ม'),
                 ),
