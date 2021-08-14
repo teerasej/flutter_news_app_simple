@@ -14,6 +14,12 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('News'),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          print('click');
+        },
+      ),
     );
   }
 }
