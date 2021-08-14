@@ -28,7 +28,9 @@ class _HomePageState extends State<HomePage> {
         body: ListView.builder(
           itemCount: 10,
           itemBuilder: (BuildContext context, int index) {
-            return Text(index.toString());
+            return ListTile(
+              title: Text(index.toString()),
+            );
           },
         ));
   }
