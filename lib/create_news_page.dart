@@ -10,6 +10,10 @@ class CreateNewsPage extends StatefulWidget {
 class _CreateNewsPageState extends State<CreateNewsPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Create News'),
+      ),
+    );
   }
 }

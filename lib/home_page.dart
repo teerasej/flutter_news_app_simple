@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/create_news_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
           print('click');
 
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return Text('Create News');
+            return CreateNewsPage();
           }));
         },
       ),
