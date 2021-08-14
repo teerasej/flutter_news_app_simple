@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/create_news_page.dart';
+import 'package:news_app/news_data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,7 +10,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<String> newsItems = ['abc', 'def', 'ghi'];
+  //List<String> newsItems = ['abc', 'def', 'ghi'];
+
+  List<NewsData> newsItems = [
+    NewsData('abc'),
+    NewsData('def'),
+    NewsData('ghi')
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +38,7 @@ class _HomePageState extends State<HomePage> {
           itemCount: newsItems.length,
           itemBuilder: (BuildContext context, int index) {
             return ListTile(
-              title: Text(newsItems[index]),
+              title: Text(newsItems[index].content),
             );
           },
           separatorBuilder: (context, index) {
