@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   //List<String> newsItems = ['abc', 'def', 'ghi'];
 
-  Uri webApi = Uri.parse('http://3242504417bb.ngrok.io/news');
+  Uri webApi = Uri.parse('http://c8d8b4dc6a7d.ngrok.io/news');
 
   List<NewsData> newsItems = [
     NewsData(id: '1', content: 'abc'),
