@@ -47,6 +47,9 @@ class _HomePageState extends State<HomePage> {
             }
 
             if (snapshot.connectionState == ConnectionState.done) {
+              var jsonFromAPI = snapshot.data?.body as String;
+              var newsItems = newsDataFromJson(jsonFromAPI);
+
               return Text('Got data');
             }
 
