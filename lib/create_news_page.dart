@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:news_app/news_data.dart';
 
 class CreateNewsPage extends StatefulWidget {
   const CreateNewsPage({Key? key}) : super(key: key);
@@ -32,8 +36,29 @@ class _CreateNewsPageState extends State<CreateNewsPage> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
+                  onPressed: () async {
                     var newsContent = newsContentController.text;
                     print(newsContent);
+
+                    var newsData = {"content": newsContent};
+                    var json = jsonEncode(newsData);
+
+                    var url =
+                        Uri.parse('http://c8d8b4dc6a7d.ngrok.io/news/create');
+
+                    var response = await http.post(
+                      url,
+                      headers: {"Content-Type": "application/json"},
+                      body: json,
+                    );
+
+                    if (response.statusCode == 200) {
+                      Navigator.pop(context);
+                    } else {
+                      print(response.body);
+                    }
+
+                    //
                   },
                   child: Text('เพิ่ม'),
                 ),
