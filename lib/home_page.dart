@@ -17,11 +17,11 @@ class _HomePageState extends State<HomePage> {
 
   Uri webApi = Uri.parse('http://c8d8b4dc6a7d.ngrok.io/news');
 
-  List<NewsData> newsItems = [
-    NewsData(id: '1', content: 'abc'),
-    NewsData(id: '2', content: 'def'),
-    NewsData(id: '3', content: 'ghi')
-  ];
+  // List<NewsData> newsItems = [
+  //   NewsData(id: '1', content: 'abc'),
+  //   NewsData(id: '2', content: 'def'),
+  //   NewsData(id: '3', content: 'ghi')
+  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,17 @@ class _HomePageState extends State<HomePage> {
               var jsonFromAPI = snapshot.data?.body as String;
               var newsItems = newsDataFromJson(jsonFromAPI);
 
-              return Text('Got data');
+              return ListView.separated(
+                itemCount: newsItems.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ListTile(
+                    title: Text(newsItems[index].content),
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return Divider();
+                },
+              );
             }
 
             return CircularProgressIndicator();
