@@ -34,9 +34,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             print('click');
 
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return CreateNewsPage();
-            }));
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return CreateNewsPage();
+              }),
+            ).then((value) {
+              setState(() {});
+            });
           },
         ),
         body: FutureBuilder(
