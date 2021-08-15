@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
           future: http.get(webApi),
           builder: (BuildContext context, AsyncSnapshot<Response> snapshot) {
             if (snapshot.hasError) {
-              return Text('opps...');
+              return Text('opps... ${snapshot.error.toString()}');
             }
 
             if (snapshot.connectionState == ConnectionState.done) {
