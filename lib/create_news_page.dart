@@ -8,6 +8,8 @@ class CreateNewsPage extends StatefulWidget {
 }
 
 class _CreateNewsPageState extends State<CreateNewsPage> {
+  TextEditingController newsContentController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,16 +23,17 @@ class _CreateNewsPageState extends State<CreateNewsPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text('เนื้อหาใหม่'),
-              TextFormField(),
+              TextFormField(
+                controller: newsContentController,
+              ),
               SizedBox(
                 height: 20,
               ),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    print('do something');
-                    Navigator.pop(context);
+                    var newsContent = newsContentController.text;
+                    print(newsContent);
                   },
                   child: Text('เพิ่ม'),
                 ),
