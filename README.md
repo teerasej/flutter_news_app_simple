@@ -1,6 +1,12 @@
 # news_app
 
-A new Flutter project.
+A mobile application project that demonstrate how to work with web api 
+
+## Working with Web API
+
+- This project designed to be used with following Web API: 
+  - [Node.js & MongoDB](https://github.com/teerasej/node-news-web-api)
+- If possible, you can use [ngrok](https://ngrok.com/) to expose Web API
 
 ## Getting Started
 
